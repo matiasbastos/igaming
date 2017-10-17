@@ -1,4 +1,5 @@
 from random import random
+from models import TRANSACTION, CURRENCY, Wallet, Bonus
 
 
 class Game:
@@ -10,10 +11,16 @@ class Game:
         Simulates a spin.
         return: random true/false
         """
-        return random() < 0.5
+        return random() < 0.5  # 50/50
 
-    def add_to_wallet():
-        pass
+    def add_to_wallet(self, data):
+        """
+        Encapsulates the saving into the wallet
+        return: wallet saved row
+        """
+        rec = Wallet(**data)
+        rec.save()
+        return rec
 
     def count_wagered_money():
         pass
@@ -43,8 +50,12 @@ class Game:
     """
     Player actions
     """
-    def deposit():
-        pass
+    def deposit(self, user, amount):
+        self.add_to_wallet({'transaction_type':'DEPOSIT',
+                            'currency': 'BNS',
+                            'value': amount,
+                            'user': user})
+        self.on_deposit()
 
     def play():
         pass
