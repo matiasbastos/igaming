@@ -3,7 +3,10 @@ Simple I-Gaming Platform application using Flask-AppBuilder and MongoEngine
 
 - Install it::
 
-	git clone https://github.com/dpgaspar/Flask-AppBuilder-Skeleton.git
+	git clone https://github.com/matiasbastos/igaming.git
+	cd igaming
+	virtualenv env
+	source env/bin/activate
 	pip install -r requirements.txt
 
 - Create admin user::
