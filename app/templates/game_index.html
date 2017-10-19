@@ -1,0 +1,59 @@
+{% extends "appbuilder/base.html" %}
+{% block content %}
+<form class="form-horizontal">
+	<fieldset>
+
+		<!-- Form Name -->
+		<legend>Game Demo</legend>
+
+		<!-- Text input-->
+		<div class="form-group">
+			<label class="col-md-4 control-label" for="depositinput">Deposit Amount</label>  
+			<div class="col-md-4">
+				<input id="depositinput" name="depositinput" type="number" min="0" step="1" placeholder="enter amount" class="form-control input-md">
+			</div>
+		</div>
+
+		<!-- Button -->
+		<div class="form-group">
+			<label class="col-md-4 control-label" for="depositbutton"></label>
+			<div class="col-md-4">
+				<button id="depositbutton" name="depositbutton" class="btn btn-primary" type="button">Deposit</button>
+			</div>
+		</div>
+
+		<!-- Text input-->
+		<div class="form-group">
+			<label class="col-md-4 control-label" for="betinput">Bet Amount</label>  
+			<div class="col-md-4">
+				<input id="betinput" name="betinput" type="number" min="0" step="1" placeholder="enter amount" class="form-control input-md">
+			</div>
+		</div>
+
+		<!-- Button -->
+		<div class="form-group">
+			<label class="col-md-4 control-label" for="betbutton"></label>
+			<div class="col-md-4">
+				<button id="betbutton" name="betbutton" class="btn btn-primary" type="button">Bet</button>
+			</div>
+		</div>
+
+		<legend>Results</legend>
+		<div id="results" name="results" class="text-center bg-info lead"></div>
+	</fieldset>
+</form>
+<script>
+$('#depositbutton').click(function() { 
+	var value = $('#depositinput').val();
+	$.getJSON('game/deposit/' + value,function(data){ 
+		$('#results').text(JSON.stringify(data));
+	});
+});
+$('#betbutton').click(function() { 
+	var value = $('#betinput').val();
+	$.getJSON('game/play/' + value,function(data){ 
+		$('#results').text(JSON.stringify(data));
+	});
+});
+</script>
+{% endblock %}

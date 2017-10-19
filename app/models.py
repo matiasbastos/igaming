@@ -1,8 +1,7 @@
 import time
 from flask_appbuilder.security.mongoengine.models import User
 from mongoengine import Document
-from mongoengine import LongField, StringField, ReferenceField, \
-                        IntField, BooleanField
+from mongoengine import LongField, StringField, ReferenceField, IntField
 
 TRIGGER = (('on_login', 'On Login'),
            ('on_deposit', 'On Deposit > 100 Euros'))
@@ -40,7 +39,7 @@ class Wallet(Document):
     currency = StringField(required=True, max_length=3, choices=CURRENCY)
     value = IntField(required=True)
     bonus = ReferenceField(Bonus, required=False)
-    bonus_cashed = BooleanField(default=lambda: False)
+    bonus_cashed = ReferenceField('self')
     user = ReferenceField(User, required=True)
     timestamp = LongField(default=lambda: int(round(time.time() * 1000)))
 
@@ -49,5 +48,14 @@ class Wallet(Document):
             'user',
             'currency',
             'timestamp',
-        ]
+            'bonus_cashed',
+        ],
+        'ordering': ['-timestamp']
     }
+
+    def __unicode__(self):
+        return "%s %s %s %s %s" % (self.timestamp,
+                                   self.user.username,
+                                   self.transaction_type,
+                                   self.value,
+                                   self.bonus)
