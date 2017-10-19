@@ -1,6 +1,11 @@
 Simple I-Gaming Platform application using Flask-AppBuilder and MongoEngine
 ------------------------------------------------------------------------------
-[![asciicast](https://asciinema.org/a/143039.png)](https://asciinema.org/a/143039)
+
+[!(https://asciinema.org/a/143039.png)](https://asciinema.org/a/143039)
+
+[<img src="http://www.google.com.au/images/nav_logo7.png">](http://google.com.au/)
+[!(image link)](web link)]
+
 
 - Install it::
 
