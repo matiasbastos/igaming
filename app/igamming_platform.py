@@ -1,12 +1,15 @@
+"""
+Simple IGaming Platform
+"""
 import logging
 from random import random
 from mongoengine import Document
 from models import Wallet, Bonus, User
 
 
-class Game:
+class Game(object):
     """
-    IGaming API
+    IGaming Main Class
     """
     # Config logging
     log = None
@@ -140,6 +143,7 @@ class Game:
         """
         Triggered when the player deposits money
         """
+        self.log.info('Event Triggered: %s', event)
         # get bonuses
         bonuses = Bonus.objects(trigger=event)
         for bonus in bonuses:

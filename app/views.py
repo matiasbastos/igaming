@@ -1,8 +1,8 @@
 from flask import g, jsonify, render_template
 from flask_login import login_required
-from flask_appbuilder import ModelView, BaseView, expose, has_access
+from flask_appbuilder import ModelView, BaseView, expose
 from flask_appbuilder.models.mongoengine.interface import MongoEngineInterface
-from app import appbuilder
+from application import appbuilder
 from models import Bonus, Wallet
 from igamming_platform import Game
 
@@ -23,6 +23,7 @@ class BonusModelView(ModelView):
     list_columns = ['name', 'value', 'wagering_requirement', 'trigger']
 
 
+# Game API
 class GameView(BaseView):
     route_base = "/game"
 
