@@ -141,7 +141,7 @@ class Game(object):
     """
     def on_event(self, event):
         """
-        Triggered when the player deposits money
+        Triggered when the player deposits money or login
         """
         self.log.info('Event Triggered: %s', event)
         # get bonuses
