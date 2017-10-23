@@ -2,28 +2,18 @@
 
 [![asciicast](https://asciinema.org/a/143039.png)](https://asciinema.org/a/143039)
 
-# Project Title
-
-One Paragraph of project description goes here
-
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
 
 MongoDB, Python 2.7
 
-```
-Give examples
-```
 
 ### Installing
 
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
-
+Clone the project, create the env and install the requirements
 ```
 git clone https://github.com/matiasbastos/igaming.git
 cd igaming
@@ -37,6 +27,7 @@ Create admin:
 ```
 fabmanager create-admin
 ```
+
 Run it:
 
 ```
@@ -45,11 +36,16 @@ python run.py
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+To run the tests execute:
+
+```
+python run.py
+```
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+Currently is deployed using Gunicorn and Nginx on the url sent on the mail.
+
 
 ## Built With
 
