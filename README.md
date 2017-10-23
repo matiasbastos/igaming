@@ -10,7 +10,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-MongoDB, Python 2.7
+MongoDB, Python 2.7 and Virtualenv
 
 
 ### Installing
@@ -27,7 +27,7 @@ pip install -r requirements.txt
 Create admin:
 
 ```
-fabmanager create-admin
+fabmanager create-admin --app 'cli'
 ```
 
 Run it:
