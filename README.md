@@ -2,7 +2,7 @@
 
 [![asciicast](https://asciinema.org/a/143039.png)](https://asciinema.org/a/143039)
 
-This is a simple igaming platform, made with flask and mongodb. The idea was to keep it simple and have all the game logic under one class (Game class). This configuration enables a lot of posible deploy arquitecutes, it could be runing behind an http api (as the example here), with ZeroMQ or run serverles on AWS with Api Gateway + AWS Lambda. Also the data model design was made having in mind that every transaction in the wallet must be immutable. This improves the data consistency and also enables the posibility of having a cron process (maybe with Celery), that every day collects all the data for every user, moves that rows to a 'historical' db and writes a resume of the latest user account status. This way will be super easy to scale, even with out cache.
+This is a simple igaming platform, made with flask and mongodb. The idea was to keep it simple and have all the game logic under one class (Game class). This configuration enables a lot of possible deploy architectures, it could be runing behind an http api (as the example here), with ZeroMQ or run serverles on AWS with Api Gateway + AWS Lambda. Also the data model design was made having in mind that every transaction in the wallet must be immutable. This improves the data consistency and also enables the possibility of having a cron process (with Celery), that every day collects all the data for every user, moves that rows to a 'historical' db and writes a resume of the latest user account status. This way will be super easy to scale, even with out cache.
 
 ## Getting Started
 
