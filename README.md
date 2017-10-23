@@ -33,7 +33,7 @@ fabmanager create-admin
 Run it:
 
 ```
-py.test -v
+python run.py
 ```
 
 ## Running the tests
@@ -41,7 +41,7 @@ py.test -v
 To run the tests execute:
 
 ```
-python run.py
+py.test -v
 ```
 
 ## Deployment
